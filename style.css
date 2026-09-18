@@ -1177,3 +1177,386 @@ body:hover .cursor-outline {
     height: 350px;
   }
 }
+
+
+/* =========================================
+   DHYTech Company UI Refinement
+   ========================================= */
+
+:root {
+  --content-width: 1280px;
+  --section-space: clamp(5rem, 10vw, 9rem);
+  --glass: rgba(255, 255, 255, 0.035);
+  --border: rgba(255, 255, 255, 0.10);
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  min-width: 320px;
+  line-height: 1.5;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.navbar {
+  padding: 1.5rem 5%;
+  background: linear-gradient(to bottom, rgba(5,5,5,.45), transparent);
+}
+
+.logo {
+  letter-spacing: -1px;
+}
+
+.nav-link.highlight {
+  padding: .7rem 1rem;
+  border: 1px solid rgba(0,243,255,.45);
+  border-radius: 999px;
+}
+
+.nav-link.highlight::after {
+  display: none;
+}
+
+.mobile-menu-btn {
+  appearance: none;
+  background: transparent;
+  border: 0;
+}
+
+.hero {
+  max-width: var(--content-width);
+  width: 100%;
+  margin: 0 auto;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.hero-title {
+  max-width: 1050px;
+  font-size: clamp(4rem, 9vw, 9rem);
+}
+
+.hero-subtitle {
+  max-width: 650px;
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  line-height: 1.6;
+  color: rgba(224,224,224,.78);
+}
+
+.work-section,
+.services-section,
+.experience-section {
+  padding-top: var(--section-space);
+  padding-bottom: var(--section-space);
+}
+
+.work-header,
+.section-header {
+  max-width: var(--content-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.work-header {
+  margin-bottom: clamp(2.5rem, 5vw, 5rem);
+}
+
+.work-header h2,
+.section-header h2 {
+  letter-spacing: -1px;
+}
+
+.work-header p,
+.section-header p {
+  color: #777;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: .75rem;
+}
+
+.project-card {
+  flex: 0 0 40vw;
+  max-width: 560px;
+  min-width: 320px;
+  height: min(62vh, 620px);
+  border-radius: 18px;
+  border-color: var(--border);
+}
+
+.card-inner {
+  padding: clamp(1.25rem, 3vw, 2rem);
+}
+
+.card-inner h3 {
+  font-size: clamp(1.25rem, 2vw, 1.8rem);
+  margin-bottom: .35rem;
+}
+
+.card-inner p {
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: .75rem;
+  margin-bottom: .8rem;
+}
+
+.card-inner small {
+  display: block;
+  max-width: 34rem;
+  color: #aaa;
+  line-height: 1.5;
+}
+
+.about-section {
+  padding: var(--section-space) 5%;
+  background: linear-gradient(180deg, rgba(255,255,255,.025), rgba(255,255,255,.01));
+}
+
+.about-container {
+  max-width: var(--content-width);
+  gap: clamp(3rem, 7vw, 7rem);
+}
+
+.about-text h2 {
+  font-size: clamp(2.25rem, 4vw, 4rem);
+}
+
+.about-text p {
+  max-width: 680px;
+  font-size: clamp(1rem, 1.35vw, 1.15rem);
+  color: rgba(224,224,224,.78);
+  margin-bottom: 1.5rem;
+}
+
+#skills-3d-container {
+  margin-top: 2.5rem;
+  height: 360px;
+}
+
+.about-image {
+  flex-basis: clamp(300px, 31vw, 400px);
+  height: clamp(380px, 48vw, 520px);
+}
+
+.services-section {
+  background: rgba(0,0,0,.28);
+}
+
+.services-grid {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.service-card {
+  min-height: 280px;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  border-color: var(--border);
+}
+
+.service-card h3 {
+  font-size: clamp(1.15rem, 1.7vw, 1.5rem);
+}
+
+.service-card p {
+  color: #999;
+}
+
+.experience-section {
+  max-width: 100%;
+}
+
+.timeline {
+  max-width: 900px;
+}
+
+.timeline-content p {
+  color: #999;
+  line-height: 1.7;
+  max-width: 650px;
+}
+
+footer {
+  min-height: 80vh;
+  height: auto;
+  padding: var(--section-space) 5% 3rem;
+  position: relative;
+  border-top: 1px solid rgba(255,255,255,.06);
+}
+
+.footer-content h2 {
+  font-size: clamp(2rem, 5vw, 5rem);
+}
+
+.email-link {
+  display: inline-block;
+  font-size: clamp(1.5rem, 4vw, 4rem);
+  word-break: break-word;
+}
+
+.footer-bottom {
+  position: static;
+  margin-top: 7rem;
+  max-width: var(--content-width);
+}
+
+.socials a {
+  transition: color .25s ease;
+}
+
+.socials a:hover {
+  color: var(--primary);
+}
+
+.modal-content {
+  width: min(1000px, 90%);
+}
+
+@media (max-width: 1000px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    min-height: auto;
+  }
+
+  .project-card {
+    flex-basis: 60vw;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    cursor: auto;
+  }
+
+  .navbar {
+    padding: 1.25rem 5%;
+  }
+
+  .nav-link.highlight {
+    padding: 0;
+    border: 0;
+  }
+
+  .hero {
+    min-height: 100svh;
+  }
+
+  .hero-title {
+    font-size: clamp(3.5rem, 15vw, 6rem);
+    letter-spacing: -1px;
+  }
+
+  .hero-subtitle {
+    margin-left: 0;
+    max-width: 90%;
+  }
+
+  .scroll-indicator {
+    bottom: 2rem;
+    right: 7%;
+  }
+
+  .work-header {
+    display: block;
+  }
+
+  .work-header h2 {
+    font-size: clamp(2rem, 9vw, 3.5rem);
+    margin-bottom: .75rem;
+  }
+
+  .work-header .separator {
+    display: none;
+  }
+
+  .project-card {
+    min-width: 0;
+    width: 100%;
+    height: 58vh;
+    max-height: 560px;
+  }
+
+  .about-container {
+    gap: 2rem;
+  }
+
+  .about-image {
+    width: min(100%, 360px);
+    height: 360px;
+    margin: 0 auto;
+  }
+
+  .about-text h2,
+  .about-text p {
+    text-align: left;
+  }
+
+  #skills-3d-container {
+    height: 280px;
+  }
+
+  .timeline {
+    margin-left: 0;
+  }
+
+  .timeline-content h3 {
+    font-size: 1.4rem;
+  }
+
+  .timeline-content p {
+    font-size: .95rem;
+  }
+
+  footer {
+    min-height: 70vh;
+  }
+
+  .footer-bottom {
+    margin-top: 5rem;
+    align-items: flex-end;
+  }
+
+  .socials a {
+    margin-left: 1rem;
+  }
+
+  .modal-content {
+    width: 94%;
+    max-height: 88vh;
+  }
+
+  .modal-links {
+    flex-wrap: wrap;
+  }
+
+  .btn-glow,
+  .btn-outline {
+    flex: 1;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .project-card,
+  .service-card,
+  .profile-img,
+  .nav-link::after,
+  .modal,
+  .modal-content {
+    transition: none !important;
+  }
+}
