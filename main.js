@@ -249,6 +249,7 @@ const navLinksItems = document.querySelectorAll('.nav-link');
 if (menuBtn) {
     menuBtn.addEventListener('click', () => {
         navLinks.classList.toggle('active');
+        menuBtn.setAttribute('aria-expanded', navLinks.classList.contains('active') ? 'true' : 'false');
 
         // Icon toggle
         const icon = menuBtn.querySelector('i');
@@ -265,6 +266,7 @@ if (menuBtn) {
     navLinksItems.forEach(link => {
         link.addEventListener('click', () => {
             navLinks.classList.remove('active');
+            menuBtn.setAttribute('aria-expanded', 'false');
             const icon = menuBtn.querySelector('i');
             icon.classList.remove('fa-times');
             icon.classList.add('fa-bars');
@@ -309,6 +311,12 @@ const openModal = (card) => {
     modalTitle.textContent = card.dataset.title;
     modalTech.textContent = card.dataset.tech;
     modalDesc.textContent = card.dataset.description;
+
+    const liveLink = document.querySelector('.modal-links .btn-glow');
+    const githubLink = document.querySelector('.modal-links .btn-outline');
+    liveLink.href = card.dataset.live || '#';
+    githubLink.href = card.dataset.github || '#';
+    githubLink.style.display = card.dataset.github ? 'inline-flex' : 'none';
     
     // In a real app, you'd having matching images. For now we use the card BG color/gradient or a placeholder
     // If card has an image, use it. If not, maybe use a color.
@@ -519,11 +527,11 @@ const initCommandMode = () => {
     const commands = [
         { cmd: '> home', desc: 'Go to Top', action: () => { window.scrollTo({ top: 0, behavior: 'smooth' }); } },
         { cmd: '> work', desc: 'Browse Projects', action: () => { document.querySelector('#work').scrollIntoView({ behavior: 'smooth' }); } },
-        { cmd: '> about', desc: 'View Skills & Bio', action: () => { document.querySelector('#about').scrollIntoView({ behavior: 'smooth' }); } },
+        { cmd: '> about', desc: 'About DHYTech', action: () => { document.querySelector('#about').scrollIntoView({ behavior: 'smooth' }); } },
         { cmd: '> contact', desc: 'Send a Message', action: () => { document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' }); } },
         { cmd: '> email', desc: 'Email Me', action: () => { window.location.href = 'mailto:hello@dhy.tech'; } },
         { cmd: '> github', desc: 'View GitHub Profile', action: () => { window.open('https://github.com/capt-dhy', '_blank'); } },
-        { cmd: '> linkedin', desc: 'Connect on LinkedIn', action: () => { window.open('https://linkedin.com/in/dawood-hassan-882b26340', '_blank'); } },
+        { cmd: '> linkedin', desc: 'Connect with the founder', action: () => { window.open('https://www.linkedin.com/in/dawood-yusuf-0061a6437', '_blank'); } },
         { cmd: '> theme', desc: 'Toggle Light/Dark Mode (Coming Soon)', action: () => { alert('Coming soon!'); } },
     ];
 
